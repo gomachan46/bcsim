@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    image: node:12.13.0
+    command: make -f app.mk dev
+    working_dir: '/bcsim'
+    ports:
+      - "3333:3000"
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+    volumes:
+      - .:/bcsim
