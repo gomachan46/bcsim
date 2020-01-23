@@ -7,8 +7,7 @@ init:
 build:
 	docker-compose build
 
-up:
-	make install
+up: app/install
 	docker-compose up
 
 down:

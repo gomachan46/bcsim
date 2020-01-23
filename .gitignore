@@ -126,3 +126,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# service worker
+sw.*
