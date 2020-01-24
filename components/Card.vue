@@ -7,7 +7,7 @@
         Blood Card Simulator
       </p>
       <p class="text-gray-700 text-base">
-        (This is an unofficial tool)
+        (This tool is unofficial)
       </p>
     </div>
   </div>
