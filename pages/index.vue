@@ -1,6 +1,13 @@
 <template>
   <div class="container">
-    <card></card>
+    <card
+      :id="1"
+      image="/bc_icon.jpg"
+      :effects="['4ダメージを与える。']"
+      type="攻撃"
+      title="攻撃"
+      cost="1"
+    ></card>
   </div>
 </template>
 
