@@ -97,6 +97,22 @@ export default {
           type: "防御",
           title: "防御",
           cost: "1"
+        },
+        {
+          id: 10,
+          image: "/bc_icon.jpg",
+          effects: ["捨て札の5枚のランダムなカードを山札に移す。"],
+          type: "スキル",
+          title: "回復",
+          cost: "1"
+        },
+        {
+          id: 11,
+          image: "/bc_icon.jpg",
+          effects: ["捨て札の5枚のランダムなカードを山札に移す。"],
+          type: "スキル",
+          title: "回復",
+          cost: "1"
         }
       ]
     };
