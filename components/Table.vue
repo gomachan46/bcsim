@@ -4,7 +4,7 @@
       <div class="flex justify-around">
         <div>
           <p>プレイヤー</p>
-          <img src="/bc_icon.jpg" alt="player" class="h-16 object-cover" />
+          <img src="/bc_icon.jpg" alt="プレイヤー" class="h-16 object-cover" />
         </div>
         <div></div>
         <template v-for="enemy in enemies">
@@ -32,7 +32,7 @@
           </div>
           <div class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">エナジー</p>
-            <img src="/bc_icon.jpg" :alt="energy" class="h-16 object-cover" />
+            <img src="/bc_icon.jpg" alt="エナジー" class="h-16 object-cover" />
             <p>{{ energy }}</p>
           </div>
         </div>
@@ -43,11 +43,7 @@
           </div>
           <div class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">捨て札</p>
-            <img
-              src="/bc_icon.jpg"
-              :alt="discardsLength"
-              class="h-16 object-cover"
-            />
+            <img src="/bc_icon.jpg" alt="捨て札" class="h-16 object-cover" />
             <p>{{ discardsLength }}</p>
           </div>
         </div>
