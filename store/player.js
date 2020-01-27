@@ -1,7 +1,8 @@
 export const state = () => ({
   energy: 3,
   atk: 0,
-  def: 0
+  def: 0,
+  block: 0
 });
 
 export const getters = {};

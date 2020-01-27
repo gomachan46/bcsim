@@ -4,12 +4,20 @@
       <div class="flex justify-around">
         <div>
           <p>プレイヤー</p>
-          <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
+          <img src="/bc_icon.jpg" alt="player" class="h-16 object-cover" />
         </div>
-        <div>
-          <p>敵</p>
-          <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
-        </div>
+        <div></div>
+        <template v-for="enemy in enemies">
+          <div>
+            <p>{{ enemy.name }}</p>
+            <img
+              src="/bc_icon.jpg"
+              :alt="enemy.name"
+              class="h-16 object-cover"
+            />
+            <p>HP: {{ enemy.hp }}</p>
+          </div>
+        </template>
       </div>
       <div class="flex justify-between">
         <div class="flex justify-around">
@@ -59,6 +67,7 @@ const { mapGetters: mapDeckGetters } = createNamespacedHelpers("deck");
 const { mapGetters: mapHandsGetters } = createNamespacedHelpers("hands");
 const { mapState: mapPlayerState } = createNamespacedHelpers("player");
 const { mapGetters: mapDiscardsGetters } = createNamespacedHelpers("discards");
+const { mapState: mapEnemiesState } = createNamespacedHelpers("enemies");
 
 export default {
   components: {
@@ -76,6 +85,9 @@ export default {
     }),
     ...mapDiscardsGetters({
       discardsLength: "length"
+    }),
+    ...mapEnemiesState({
+      enemies: ({ enemies }) => enemies
     })
   }
 };
