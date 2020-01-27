@@ -6,7 +6,7 @@
         <component
           :is="card.component"
           v-bind="card.props"
-          class="w-1/6"
+          class="sp:w-1/2 w-1/6"
         ></component>
       </template>
     </div>
