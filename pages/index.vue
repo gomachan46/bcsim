@@ -1,69 +1,20 @@
 <template>
   <div class="container">
-    <div class="flex flex-wrap">
-      <template v-for="card in cards">
-        <!-- eslint-disable-next-line vue/require-component-is -->
-        <component
-          :is="card.component"
-          v-bind="card.props"
-          class="sp:w-1/2 w-1/6"
-        ></component>
-      </template>
-    </div>
+    <game-table class="w-full"></game-table>
   </div>
 </template>
 
 <script>
+import GameTable from "~/components/Table.vue";
+
 export default {
-  data() {
-    return {
-      cards: [
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "attack",
-          props: { cost: 0, value: 8 }
-        },
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "attack",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "defense",
-          props: { cost: 1, value: 4 }
-        },
-        {
-          component: "defense",
-          props: { cost: 0, value: 6 }
-        },
-        {
-          component: "healing",
-          props: { cost: 1, value: 5 }
-        },
-        {
-          component: "healing",
-          props: { cost: 0, value: 5 }
-        }
-      ]
-    };
+  components: {
+    GameTable
+  },
+  async fetch({ store }) {
+    await store.dispatch("deck/initialize");
+    const hands = await store.dispatch("deck/draw", 6);
+    await store.dispatch("hands/setCards", hands);
   }
 };
 </script>
