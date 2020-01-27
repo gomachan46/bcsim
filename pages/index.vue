@@ -4,9 +4,9 @@
       <template v-for="card in cards">
         <!-- eslint-disable-next-line vue/require-component-is -->
         <component
-          class="w-1/6"
           :is="card.component"
           v-bind="card.props"
+          class="w-1/6"
         ></component>
       </template>
     </div>
@@ -20,31 +20,35 @@ export default {
       cards: [
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
         },
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
         },
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
         },
         {
           component: "attack",
-          props: { cost: 0, damage: 8 }
+          props: { cost: 0, value: 8 }
         },
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
         },
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
         },
         {
           component: "attack",
-          props: { cost: 1, damage: 4 }
+          props: { cost: 1, value: 4 }
+        },
+        {
+          component: "defense",
+          props: { cost: 1, value: 4 }
         }
       ]
     };

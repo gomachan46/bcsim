@@ -1,5 +1,8 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-sm" @click="effect">
+  <div
+    class="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer"
+    @click="effect"
+  >
     <div class="border-solid border-2 border-gray-200">
       <div class="flex justify-between px-6 pt-1">
         <div class="font-bold text-l mb-2">{{ cost }}</div>

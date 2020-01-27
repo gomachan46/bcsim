@@ -4,8 +4,8 @@
     :text="text"
     :effect="effect"
     image="/bc_icon.jpg"
-    type="攻撃"
-    title="攻撃"
+    type="防御"
+    title="防御"
   ></card>
 </template>
 
@@ -29,11 +29,11 @@ export default {
   },
   computed: {
     text() {
-      return `${this.value}ダメージを与える。`;
+      return `${this.value}ブロックを得る。`;
     },
     effect() {
       return () => {
-        console.log(`hello, attack: ${this.value} ${this.cost}`);
+        console.log(`hello, defense: ${this.value} ${this.cost}`);
       };
     }
   }
