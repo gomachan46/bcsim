@@ -20,7 +20,7 @@
         <div class="w-12 mx-1 cursor-pointer">
           <p class="text-xs">エナジー</p>
           <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
-          <p>{{ deckLength }}</p>
+          <p>{{ energy }}</p>
         </div>
       </div>
       <div class="flex">
@@ -47,6 +47,7 @@ import Hands from "~/components/Hands.vue";
 
 const { mapGetters: mapDeckGetters } = createNamespacedHelpers("deck");
 const { mapGetters: mapHandsGetters } = createNamespacedHelpers("hands");
+const { mapState: mapPlayerState } = createNamespacedHelpers("player");
 
 export default {
   components: {
@@ -58,6 +59,9 @@ export default {
     }),
     ...mapHandsGetters({
       handsLength: "length"
+    }),
+    ...mapPlayerState({
+      energy: ({ energy }) => energy
     })
   }
 };
