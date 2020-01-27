@@ -24,7 +24,7 @@
           <div class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">山札</p>
             <img src="/bc_icon.jpg" alt="山札" class="h-16 object-cover" />
-            <p>{{ deckLength }}</p>
+            <p>{{ deckLength }}({{ blocks }})</p>
           </div>
           <div class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">エナジー</p>
@@ -73,7 +73,8 @@ export default {
       handsLength: "length"
     }),
     ...mapPlayerState({
-      energy: ({ energy }) => energy
+      energy: ({ energy }) => energy,
+      blocks: ({ blocks }) => blocks
     }),
     ...mapDiscardsGetters({
       discardsLength: "length"

@@ -10,7 +10,10 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from "vuex";
 import Card from "~/components/Card.vue";
+
+const { mapActions: mapPlayerActions } = createNamespacedHelpers("player");
 
 export default {
   components: {
@@ -33,9 +36,16 @@ export default {
     },
     effect() {
       return () => {
-        console.log(`hello, defense: ${this.value} ${this.cost}`);
+        this.minusEnergy(this.cost);
+        this.addBlocks(this.value);
       };
     }
+  },
+  methods: {
+    ...mapPlayerActions({
+      minusEnergy: "minusEnergy",
+      addBlocks: "addBlocks"
+    })
   }
 };
 </script>
