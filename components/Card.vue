@@ -1,18 +1,18 @@
 <template>
   <div
-    class="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer"
+    class="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer p-1"
     @click="effect"
   >
     <div class="border-solid border-2 border-gray-200">
-      <div class="flex justify-between px-6 pt-1">
-        <div class="font-bold text-l mb-2">{{ cost }}</div>
-        <div class="font-bold text-l mb-2">{{ title }}</div>
+      <div class="flex justify-between px-6 py-1">
+        <div class="font-bold text-l">{{ cost }}</div>
+        <div class="font-bold text-l">{{ title }}</div>
         <div class=""></div>
       </div>
-      <img :src="image" :alt="title" class="w-full" />
-      <div class="px-6 py-2">
-        <div class="font-bold text-l mb-2">{{ type }}</div>
-        <p class="text-gray-700 text-sm h-20">{{ text }}</p>
+      <img :src="image" :alt="title" class="w-full h-32 object-cover" />
+      <div class="px-2 py-1">
+        <div class="font-bold text-l">{{ type }}</div>
+        <p class="text-gray-700 text-sm h-24 pt-1">{{ text }}</p>
       </div>
     </div>
   </div>
