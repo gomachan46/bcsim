@@ -9,7 +9,7 @@
       <img :src="image" :alt="title" class="w-full" />
       <div class="px-6 py-2">
         <div class="font-bold text-l mb-2">{{ type }}</div>
-        <p class="text-gray-700 text-base">
+        <p class="text-gray-700 text-sm h-20">
           <template v-for="effect in effects">{{ effect }}</template>
         </p>
       </div>
