@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-sm">
+  <div class="max-w-sm rounded overflow-hidden shadow-sm" @click="effect">
     <div class="border-solid border-2 border-gray-200">
       <div class="flex justify-between px-6 pt-1">
         <div class="font-bold text-l mb-2">{{ cost }}</div>
@@ -9,9 +9,7 @@
       <img :src="image" :alt="title" class="w-full" />
       <div class="px-6 py-2">
         <div class="font-bold text-l mb-2">{{ type }}</div>
-        <p class="text-gray-700 text-sm h-20">
-          <template v-for="effect in effects">{{ effect }}</template>
-        </p>
+        <p class="text-gray-700 text-sm h-20">{{ text }}</p>
       </div>
     </div>
   </div>
@@ -20,10 +18,6 @@
 <script>
 export default {
   props: {
-    id: {
-      type: Number,
-      required: true
-    },
     type: {
       type: String,
       required: true
@@ -40,8 +34,12 @@ export default {
       type: String,
       required: true
     },
-    effects: {
-      type: Array,
+    text: {
+      type: String,
+      required: true
+    },
+    effect: {
+      type: Function,
       required: true
     }
   }
