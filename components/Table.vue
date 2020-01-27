@@ -1,41 +1,47 @@
 <template>
   <div>
-    <div class="flex justify-around">
-      <div>
-        <p>プレイヤー</p>
-        <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
-      </div>
-      <div>
-        <p>敵</p>
-        <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
-      </div>
-    </div>
-    <div class="flex justify-between">
+    <div class="top-0 sticky z-10 bg-white">
       <div class="flex justify-around">
-        <div class="w-12 mx-1 cursor-pointer">
-          <p class="text-xs">山札</p>
+        <div>
+          <p>プレイヤー</p>
           <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
-          <p>{{ deckLength }}</p>
         </div>
-        <div class="w-12 mx-1 cursor-pointer">
-          <p class="text-xs">エナジー</p>
-          <img src="/bc_icon.jpg" :alt="energy" class="h-16 object-cover" />
-          <p>{{ energy }}</p>
+        <div>
+          <p>敵</p>
+          <img src="/bc_icon.jpg" :alt="deckLength" class="h-16 object-cover" />
         </div>
       </div>
-      <div class="flex">
-        <div class="w-12 mx-1 cursor-pointer">
-          <p class="text-xs">パス</p>
-          <img src="/bc_icon.jpg" :alt="パス" class="h-16 object-cover" />
+      <div class="flex justify-between">
+        <div class="flex justify-around">
+          <div class="w-12 mx-1 cursor-pointer">
+            <p class="text-xs">山札</p>
+            <img
+              src="/bc_icon.jpg"
+              :alt="deckLength"
+              class="h-16 object-cover"
+            />
+            <p>{{ deckLength }}</p>
+          </div>
+          <div class="w-12 mx-1 cursor-pointer">
+            <p class="text-xs">エナジー</p>
+            <img src="/bc_icon.jpg" :alt="energy" class="h-16 object-cover" />
+            <p>{{ energy }}</p>
+          </div>
         </div>
-        <div class="w-12 mx-1 cursor-pointer">
-          <p class="text-xs">捨て札</p>
-          <img
-            src="/bc_icon.jpg"
-            :alt="discardsLength"
-            class="h-16 object-cover"
-          />
-          <p>{{ discardsLength }}</p>
+        <div class="flex">
+          <div class="w-12 mx-1 cursor-pointer">
+            <p class="text-xs">パス</p>
+            <img src="/bc_icon.jpg" alt="パス" class="h-16 object-cover" />
+          </div>
+          <div class="w-12 mx-1 cursor-pointer">
+            <p class="text-xs">捨て札</p>
+            <img
+              src="/bc_icon.jpg"
+              :alt="discardsLength"
+              class="h-16 object-cover"
+            />
+            <p>{{ discardsLength }}</p>
+          </div>
         </div>
       </div>
     </div>
