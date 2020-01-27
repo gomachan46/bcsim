@@ -23,11 +23,7 @@
         <div class="flex justify-around">
           <div class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">山札</p>
-            <img
-              src="/bc_icon.jpg"
-              :alt="deckLength"
-              class="h-16 object-cover"
-            />
+            <img src="/bc_icon.jpg" alt="山札" class="h-16 object-cover" />
             <p>{{ deckLength }}</p>
           </div>
           <div class="w-12 mx-1 cursor-pointer">
