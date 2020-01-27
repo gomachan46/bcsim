@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="flex">
-          <div class="w-12 mx-1 cursor-pointer">
+          <div class="w-12 mx-1 cursor-pointer" @click="initializeTable">
             <p class="text-xs">パス</p>
             <img src="/bc_icon.jpg" alt="パス" class="h-16 object-cover" />
           </div>
@@ -56,10 +56,14 @@ import { createNamespacedHelpers } from "vuex";
 import Hands from "~/components/Hands.vue";
 
 const { mapGetters: mapDeckGetters } = createNamespacedHelpers("deck");
-const { mapGetters: mapHandsGetters } = createNamespacedHelpers("hands");
+const {
+  mapGetters: mapHandsGetters,
+  mapActions: mapHandsActions
+} = createNamespacedHelpers("hands");
 const { mapState: mapPlayerState } = createNamespacedHelpers("player");
 const { mapGetters: mapDiscardsGetters } = createNamespacedHelpers("discards");
 const { mapState: mapEnemiesState } = createNamespacedHelpers("enemies");
+const { mapActions: mapDeckActions } = createNamespacedHelpers("deck");
 
 export default {
   components: {
@@ -81,6 +85,20 @@ export default {
     }),
     ...mapEnemiesState({
       enemies: ({ enemies }) => enemies
+    })
+  },
+  methods: {
+    async initializeTable() {
+      await this.initializeDeck();
+      const hands = await this.draw(6);
+      await this.setHands(hands);
+    },
+    ...mapDeckActions({
+      initializeDeck: "initialize",
+      draw: "draw"
+    }),
+    ...mapHandsActions({
+      setHands: "setCards"
     })
   }
 };
