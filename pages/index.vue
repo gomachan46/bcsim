@@ -49,6 +49,18 @@ export default {
         {
           component: "defense",
           props: { cost: 1, value: 4 }
+        },
+        {
+          component: "defense",
+          props: { cost: 0, value: 6 }
+        },
+        {
+          component: "healing",
+          props: { cost: 1, value: 5 }
+        },
+        {
+          component: "healing",
+          props: { cost: 0, value: 5 }
         }
       ]
     };
