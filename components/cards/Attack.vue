@@ -10,7 +10,10 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from "vuex";
 import Card from "~/components/Card.vue";
+
+const { mapActions: mapHandsActions } = createNamespacedHelpers("hands");
 
 export default {
   components: {
@@ -18,6 +21,10 @@ export default {
   },
   inheritAttrs: false,
   props: {
+    id: {
+      type: Number,
+      required: true
+    },
     cost: {
       type: Number,
       required: true
@@ -33,9 +40,14 @@ export default {
     },
     effect() {
       return () => {
-        console.log(`hello, attack: ${this.value} ${this.cost}`);
+        this.discardHand(this.id);
       };
     }
+  },
+  methods: {
+    ...mapHandsActions({
+      discardHand: "discard"
+    })
   }
 };
 </script>

@@ -27,47 +27,47 @@ export const actions = {
     const cards = [
       {
         component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "attack",
-        props: { cost: 0, value: 8 }
-      },
-      {
-        component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "attack",
-        props: { cost: 1, value: 4 }
-      },
-      {
-        component: "defense",
         props: { id: 1, cost: 1, value: 4 }
       },
       {
+        component: "attack",
+        props: { id: 2, cost: 1, value: 4 }
+      },
+      {
+        component: "attack",
+        props: { id: 3, cost: 1, value: 4 }
+      },
+      {
+        component: "attack",
+        props: { id: 3, cost: 0, value: 8 }
+      },
+      {
+        component: "attack",
+        props: { id: 4, cost: 1, value: 4 }
+      },
+      {
+        component: "attack",
+        props: { id: 5, cost: 1, value: 4 }
+      },
+      {
+        component: "attack",
+        props: { id: 6, cost: 1, value: 4 }
+      },
+      {
         component: "defense",
-        props: { id: 2, cost: 0, value: 6 }
+        props: { id: 7, cost: 1, value: 4 }
+      },
+      {
+        component: "defense",
+        props: { id: 8, cost: 0, value: 6 }
       },
       {
         component: "healing",
-        props: { cost: 1, value: 5 }
+        props: { id: 9, cost: 1, value: 5 }
       },
       {
         component: "healing",
-        props: { cost: 0, value: 5 }
+        props: { id: 10, cost: 0, value: 5 }
       }
     ];
 

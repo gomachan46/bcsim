@@ -13,8 +13,6 @@ export const mutations = {
     state.cards = cards;
   },
   subCard(state, cardId) {
-    console.log(cardId);
-    console.log(state.cards);
     state.cards = state.cards.filter(c => c.props.id !== cardId);
   }
 };
