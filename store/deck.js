@@ -55,11 +55,11 @@ export const actions = {
       },
       {
         component: "defense",
-        props: { cost: 1, value: 4 }
+        props: { id: 1, cost: 1, value: 4 }
       },
       {
         component: "defense",
-        props: { cost: 0, value: 6 }
+        props: { id: 2, cost: 0, value: 6 }
       },
       {
         component: "healing",

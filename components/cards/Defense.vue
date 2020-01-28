@@ -1,5 +1,6 @@
 <template>
   <card
+    :id="id"
     :cost="`${cost}`"
     :text="text"
     :effect="effect"
@@ -14,6 +15,7 @@ import { createNamespacedHelpers } from "vuex";
 import Card from "~/components/Card.vue";
 
 const { mapActions: mapPlayerActions } = createNamespacedHelpers("player");
+const { mapActions: mapHandsActions } = createNamespacedHelpers("hands");
 
 export default {
   components: {
@@ -21,6 +23,10 @@ export default {
   },
   inheritAttrs: false,
   props: {
+    id: {
+      type: Number,
+      required: true
+    },
     cost: {
       type: Number,
       required: true
@@ -38,6 +44,7 @@ export default {
       return () => {
         this.minusEnergy(this.cost);
         this.addBlocks(this.value);
+        this.discardHand(this.id);
       };
     }
   },
@@ -45,6 +52,9 @@ export default {
     ...mapPlayerActions({
       minusEnergy: "minusEnergy",
       addBlocks: "addBlocks"
+    }),
+    ...mapHandsActions({
+      discardHand: "discard"
     })
   }
 };
