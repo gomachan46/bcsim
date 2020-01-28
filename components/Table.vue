@@ -87,11 +87,23 @@ export default {
       enemies: ({ enemies }) => enemies
     })
   },
+  data() {
+    return {
+      selectedHand: null,
+      selectedEnemy: null
+    };
+  },
   methods: {
     async initializeTable() {
       await this.initializeDeck();
       const hands = await this.draw(6);
       await this.setHands(hands);
+    },
+    selectHand(card) {
+      this.selectedHand = card;
+    },
+    selectEnemy(enemy) {
+      this.selectedEnemy = enemy;
     },
     ...mapDeckActions({
       initializeDeck: "initialize",
