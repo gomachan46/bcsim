@@ -8,15 +8,13 @@
         </div>
         <div></div>
         <template v-for="enemy in enemies">
-          <div>
-            <p>{{ enemy.name }}</p>
-            <img
-              src="/bc_icon.jpg"
-              :alt="enemy.name"
-              class="h-16 object-cover"
-            />
-            <p>HP: {{ enemy.hp }}</p>
-          </div>
+          <enemy
+            :id="enemy.id"
+            :name="enemy.name"
+            :hp="enemy.hp"
+            :atk="enemy.atk"
+            :def="enemy.def"
+          ></enemy>
         </template>
       </div>
       <div class="flex justify-between">
@@ -33,7 +31,7 @@
           </div>
         </div>
         <div class="flex">
-          <div class="w-12 mx-1 cursor-pointer" @click="initializeTable">
+          <div @click="initializeTable" class="w-12 mx-1 cursor-pointer">
             <p class="text-xs">パス</p>
             <img src="/bc_icon.jpg" alt="パス" class="h-16 object-cover" />
           </div>
@@ -54,6 +52,7 @@
 <script>
 import { createNamespacedHelpers } from "vuex";
 import Hands from "~/components/Hands.vue";
+import Enemy from "~/components/Enemy.vue";
 
 const { mapGetters: mapDeckGetters } = createNamespacedHelpers("deck");
 const {
@@ -67,7 +66,8 @@ const { mapActions: mapDeckActions } = createNamespacedHelpers("deck");
 
 export default {
   components: {
-    Hands
+    Hands,
+    Enemy
   },
   computed: {
     ...mapDeckGetters({

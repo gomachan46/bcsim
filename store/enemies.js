@@ -1,6 +1,7 @@
 export const state = () => ({
   enemies: [
     {
+      id: 1,
       name: "敵",
       hp: 10,
       atk: 0,

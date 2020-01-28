@@ -1,7 +1,7 @@
 <template>
   <div
-    class="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer p-1"
     @click="effect"
+    class="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer p-1"
   >
     <div class="border-solid border-2 border-gray-200">
       <div class="flex justify-between px-6 py-1">
