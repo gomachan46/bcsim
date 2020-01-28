@@ -1,5 +1,5 @@
 <template>
-  <div @click="hello">
+  <div>
     <p>{{ name }}</p>
     <img :alt="name" src="/bc_icon.jpg" class="h-16 object-cover" />
     <p>HP: {{ hp }}</p>
@@ -32,10 +32,6 @@ export default {
     }
   },
   computed: {},
-  methods: {
-    hello() {
-      console.log("hello");
-    }
-  }
+  methods: {}
 };
 </script>
