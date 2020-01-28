@@ -1,6 +1,5 @@
 <template>
   <card
-    :id="id"
     :cost="`${cost}`"
     :text="text"
     :effect="effect"
